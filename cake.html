@@ -223,87 +223,25 @@
     color: var(--accent);
     opacity: 0.4;
   }
-
-  /* --- Redesigned Memories Section --- */
-  #memories {
-    overflow: hidden;
-  }
-  .timeline {
-    position: relative;
-    margin-top: 24px;
-    padding-left: 32px;
-  }
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 14px;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(var(--accent), var(--accent-2));
-    border-radius: 4px;
-    opacity: 0.6;
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 26px;
-    animation: fadeInUp 0.8s ease both;
-  }
-  .timeline-dot {
-    position: absolute;
-    left: -1px;
-    top: 6px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-2), var(--accent));
-    box-shadow: 0 0 8px var(--accent);
-  }
-  .timeline-content {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 14px 18px;
-    border-radius: 12px;
-    color: #dff4ff;
-    transition: transform 0.3s ease, background 0.3s ease;
-  }
-  .timeline-content:hover {
-    background: rgba(255,255,255,0.06);
-    transform: translateY(-4px);
-  }
-  .timeline-content h4 {
-    margin: 0 0 6px;
-    font-size: 16px;
-    color: var(--accent);
-  }
-  .timeline-content p {
-    margin: 0;
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  @keyframes fadeInUp {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-  }
-
-  @media (max-width: 980px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { height: 360px; }
-    nav.menu { display: none; }
-    .menu-toggle { display: block; }
-    .title { font-size: 28px; }
-  }
-  @media (max-width: 600px) {
-    .wrap { padding: 12px; }
-    header { flex-direction: row; justify-content: space-between; align-items: center; }
-    .menu-toggle { display: block; }
-    .hero-right { height: 300px; }
-    .slideshow { height: 280px; }
-    .title { font-size: 24px; }
-    .subtitle { font-size: 14px; }
-    .grid img { aspect-ratio: 4 / 5; }
-  }
+  /* --- Memories Section --- */
+  #memories { overflow: hidden; }
+  .timeline { position: relative; margin-top: 24px; padding-left: 32px; }
+  .timeline::before { content: ""; position: absolute; left: 14px; top: 0; width: 3px; height: 100%; background: linear-gradient(var(--accent), var(--accent-2)); border-radius: 4px; opacity: 0.6; }
+  .timeline-item { position: relative; margin-bottom: 26px; animation: fadeInUp 0.8s ease both; }
+  .timeline-dot { position: absolute; left: -1px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-2), var(--accent)); box-shadow: 0 0 8px var(--accent); }
+  .timeline-content { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 14px 18px; border-radius: 12px; color: #dff4ff; transition: transform 0.3s ease, background 0.3s ease; }
+  .timeline-content:hover { background: rgba(255,255,255,0.06); transform: translateY(-4px); }
+  .timeline-content h4 { margin: 0 0 6px; font-size: 16px; color: var(--accent); }
+  .timeline-content p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.6; }
+  @keyframes fadeInUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
+  /* --- Birthday Awards Section --- */
+  #awards { overflow: hidden; }
+  .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 12px; }
+  .award-card { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #042033; font-weight: 700; text-align: center; padding: 16px; border-radius: 14px; box-shadow: 0 6px 12px rgba(0,0,0,0.2); cursor: default; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .award-card:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 10px 18px rgba(0,0,0,0.3); }
+  /* --- Responsive --- */
+  @media (max-width: 980px) { .hero { grid-template-columns: 1fr; } .hero-right { height: 360px; } nav.menu { display: none; } .menu-toggle { display: block; } .title { font-size: 28px; } }
+  @media (max-width: 600px) { .wrap { padding: 12px; } header { flex-direction: row; justify-content: space-between; align-items: center; } .menu-toggle { display: block; } .hero-right { height: 300px; } .slideshow { height: 280px; } .title { font-size: 24px; } .subtitle { font-size: 14px; } .grid img { aspect-ratio: 4 / 5; } }
 </style>
 </head>
 <body>
@@ -324,6 +262,7 @@
     <a href="#gallery" class="nav-link">Gallery</a>
     <a href="#memories" class="nav-link">Memories</a>
     <a href="#quotes" class="nav-link">Quotes</a>
+    <a href="#awards" class="nav-link">Awards</a>
   </nav>
 
   <nav class="menu mobile" id="mobileMenu">
@@ -333,6 +272,7 @@
     <a href="#gallery" class="nav-link">Gallery</a>
     <a href="#memories" class="nav-link">Memories</a>
     <a href="#quotes" class="nav-link">Quotes</a>
+    <a href="#awards" class="nav-link">Awards</a>
   </nav>
 </header>
 
@@ -344,6 +284,7 @@
     <p class="subtitle">Wishing you a day filled with love, laughter and dreams that come true. Enjoy every slice of happiness today. This is all for you.</p>
     <div class="actions">
       <button class="btn primary" id="playMusicBtn">🎵 Play Music</button>
+      <button class="btn primary" id="confettiBtn" style="margin-left:10px;">🎊 Celebrate!</button>
     </div>
   </div>
   <div class="hero-right card">
@@ -389,7 +330,7 @@
   </div>
 </section>
 
-<!-- MEMORIES (Redesigned Timeline) -->
+<!-- MEMORIES -->
 <section id="memories" class="card" style="margin-top:26px">
   <h3 style="color:var(--accent)">Our Timeline of Friendship</h3>
   <div class="timeline">
@@ -443,11 +384,25 @@
   </div>
 </section>
 
+<!-- BIRTHDAY AWARDS -->
+<section id="awards" class="card" style="margin-top:26px">
+  <h3 style="color:var(--accent); text-align:center; margin-bottom:18px;">🎉 Sana's Birthday Awards 🏆</h3>
+  <div class="awards-grid">
+      <div class="award-card">Most Likely to Make You Laugh & Cry in 5 Seconds 😂😭</div>
+      <div class="award-card">Soft Heart Hidden Under Fury 💖🔥</div>
+      <div class="award-card">Drama Queen 🎭👑</div>
+  </div>
+</section>
+
 <footer class="card">
   <div style="font-weight:700;color:#dff4ff">Made by Shehram with love for Sana Khan</div>
 </footer>
 </div>
 
+<!-- CONFETTI CANVAS -->
+<canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 <script>
 /* Smooth Scroll */
 document.querySelectorAll('nav a').forEach(a => {
@@ -470,6 +425,53 @@ const mobileMenu = document.getElementById('mobileMenu');
 menuToggle.addEventListener('click', () => {
   mobileMenu.classList.toggle('show');
 });
+
+/* Confetti Animation */
+const confettiCanvas = document.getElementById('confetti-canvas');
+const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
+
+/* Small confetti on page load */
+function launchConfetti() {
+  myConfetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 },
+    colors: ['#4fd1c5','#64b9ff','#f9d71c','#ff6b6b','#ff8c42']
+  });
+}
+
+/* BIG confetti for Celebrate button */
+function launchBigConfetti() {
+  const duration = 5000; // 5 seconds
+  const end = Date.now() + duration;
+
+  (function frame() {
+    myConfetti({
+      particleCount: 10 + Math.floor(Math.random()*10),
+      angle: 60,
+      spread: 100,
+      origin: { x: Math.random(), y: Math.random() - 0.2 },
+      colors: ['#4fd1c5','#64b9ff','#f9d71c','#ff6b6b','#ff8c42']
+    });
+    myConfetti({
+      particleCount: 10 + Math.floor(Math.random()*10),
+      angle: 120,
+      spread: 100,
+      origin: { x: Math.random(), y: Math.random() - 0.2 },
+      colors: ['#4fd1c5','#64b9ff','#f9d71c','#ff6b6b','#ff8c42']
+    });
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }());
+}
+
+// Page load small confetti
+window.addEventListener('load', launchConfetti);
+
+// BIG confetti on button click
+document.getElementById('confettiBtn').addEventListener('click', launchBigConfetti);
 </script>
+
 </body>
 </html>
