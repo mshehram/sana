@@ -223,25 +223,70 @@
     color: var(--accent);
     opacity: 0.4;
   }
-  .balloon {
-    position: fixed;
-    bottom: -100px;
-    width: 40px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--accent);
-    z-index: 9999;
-    animation: float 6s ease-in forwards;
+
+  /* --- Redesigned Memories Section --- */
+  #memories {
+    overflow: hidden;
   }
-  @keyframes float {
-    0% {transform: translateY(0) rotate(0deg);}
-    25% {transform: translateY(-25vh) rotate(10deg);}
-    50% {transform: translateY(-50vh) rotate(-10deg);}
-    75% {transform: translateY(-75vh) rotate(10deg);}
-    100% {transform: translateY(-110vh) rotate(-5deg); opacity:0;}
+  .timeline {
+    position: relative;
+    margin-top: 24px;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(var(--accent), var(--accent-2));
+    border-radius: 4px;
+    opacity: 0.6;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 26px;
+    animation: fadeInUp 0.8s ease both;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -1px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    box-shadow: 0 0 8px var(--accent);
+  }
+  .timeline-content {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: #dff4ff;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .timeline-content:hover {
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-4px);
+  }
+  .timeline-content h4 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    color: var(--accent);
+  }
+  .timeline-content p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
   }
 
-  /* RESPONSIVE DESIGN */
   @media (max-width: 980px) {
     .hero { grid-template-columns: 1fr; }
     .hero-right { height: 360px; }
@@ -257,7 +302,7 @@
     .slideshow { height: 280px; }
     .title { font-size: 24px; }
     .subtitle { font-size: 14px; }
-    .grid img { aspect-ratio: 4 / 5; } /* better portrait framing */
+    .grid img { aspect-ratio: 4 / 5; }
   }
 </style>
 </head>
@@ -344,10 +389,46 @@
   </div>
 </section>
 
-<!-- MEMORIES -->
+<!-- MEMORIES (Redesigned Timeline) -->
 <section id="memories" class="card" style="margin-top:26px">
-  <h3 style="color:var(--accent)">Memories</h3>
-  <p class="subtitle">A few moments worth remembering...</p>
+  <h3 style="color:var(--accent)">Our Timeline of Friendship</h3>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>✨ The Beginning</h4>
+        <p>The first time we talked, everything felt new and exciting  the start of something special.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>💬 Friendship Grows</h4>
+        <p>We became good friends  sharing laughs, secrets, and all our little adventures together.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>🔐 Trust</h4>
+        <p>We trusted each other so much that we even exchanged passwords 😅  that’s rare and beautiful!</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>⚡ Fights & Forgiveness</h4>
+        <p>Then came the fights, the blocking and unblocking… but somehow, we always found our way back 💞</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>🌈 Real Friendship</h4>
+        <p>Now I know  real friendship isn’t about never fighting, it’s about never giving up on each other ✨</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- QUOTES -->
@@ -363,7 +444,7 @@
 </section>
 
 <footer class="card">
-  <div style="font-weight:700;color:#dff4ff">Made by Shehram with love for Sana</div>
+  <div style="font-weight:700;color:#dff4ff">Made by Shehram with love for Sana Khan</div>
 </footer>
 </div>
 
